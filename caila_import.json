@@ -1,0 +1,38 @@
+{
+  "project" : {
+    "id" : "canvas_sample-4047940-glz",
+    "name" : "canvas_sample-4047940-glz",
+    "folder" : "/jaicp"
+  },
+  "settings" : {
+    "language" : "ru",
+    "spellingCorrection" : false,
+    "classificationAlgorithm" : "sts",
+    "timezone" : "UTC",
+    "businessShared" : false,
+    "business" : false
+  },
+  "intents" : [ {
+    "id" : 844222,
+    "path" : "/ДобавлениеКниги",
+    "enabled" : true,
+    "businessShared" : false,
+    "business" : false,
+    "phrases" : [ {
+      "text" : "пупалупа"
+    } ],
+    "patterns" : [ "* (*добав* / *заполн* / *сохран* / *встав*) *" ]
+  }, {
+    "id" : 841679,
+    "path" : "/привет",
+    "enabled" : true,
+    "businessShared" : false,
+    "business" : false,
+    "phrases" : [ {
+      "text" : "привет"
+    } ],
+    "patterns" : [ ]
+  } ],
+  "entities" : [ ],
+  "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ]
+}

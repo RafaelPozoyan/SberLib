@@ -18,19 +18,20 @@ const initialize = (getState, getRecoveryState) => {
       },
     });
   } else {
-    return createAssistant({ getState, getRecoveryState });
+    return createAssistant({ getState });
   }
 };
 
 const Temp = () => {
-  const [books, setBooks] = useState([
-    {
-      id: Math.random().toString(36).substring(7),
-      title: "Война",
-      author: "Саркис Шаинян",
-      isFavorite: false,
-    },
-  ]);
+  // const [books, setBooks] = useState([
+  //   {
+  //     id: Math.random().toString(36).substring(7),
+  //     title: "Война",
+  //     author: "Саркис Шаинян",
+  //     isFavorite: false,
+  //   },
+  // ]);
+  const [books, setBooks] = useState([]);
 
   const [pendingBook, setPendingBook] = useState({title:"", author:""});
 
@@ -187,7 +188,17 @@ const Temp = () => {
           break;
         case "delete_note":
           console.log(action);
-          deleteBook(action);
+          if (action.id !== null) {
+            deleteBook(action);
+            }
+            else {
+              console.warn("Cant delete unexisted book", pendingBook);
+              const texts = ['видимо, такой книги уже нет'];
+              const idx = (Math.random() * texts.length) | 0;
+              // почему-то не может прочитать пропертис
+              _send_action_value('done', texts[idx]);
+            }
+          
           break;
         case "toggle_favorite_book":
           console.log(action);
