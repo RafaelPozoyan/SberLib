@@ -178,7 +178,7 @@ const Temp = () => {
           if (pendingBook.title && pendingBook.author) {
           addBook();
           }
-          else {
+          else if (pendingBook.title === 0 && pendingBook.author === 0) {
             console.warn("Cant add new book we dont have title or author", pendingBook);
             const texts = ['не хватает автора или книги!', 'Я не знаю автора, либо названия'];
             const idx = (Math.random() * texts.length) | 0;
